@@ -1,113 +1,80 @@
+import { Button } from '@/components/Button'
+import { Card } from '@/components/Card'
+import { Footer } from '@/components/Footer'
+import { CircleDollarSignIcon, Clock, CreditCard } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
+import Logo from '../assets/logo_semfundo.png'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="h-screen mx-auto max-w-4xl flex flex-col gap-12 justify-between">
+      <div className="w-full h-32 flex justify-between items-center px-8">
+
+        <Image src={Logo} alt="Logo Coisinhas da Beth" height={148} />
+
+        <div className='flex items-center gap-4'>          
+          <Link href="" className='underline font-semibold text-header transition-colors hover:text-header/80'>CADASTRAR-SE</Link>
+          <Button>LOGIN</Button>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className='flex justify-around'>
+        <div className='flex justify-start'>
+          <div className='flex flex-col items-start gap-6'>
+            
+            <h1 className='text-5xl text-header font-bold w-72'>BEM-VINDO AO COISINHAS DA BETH</h1>
+
+            <p className='block w-96 text-base text-left text-fonts font-semibold'>
+              Coisinhas da Beth criou este site para que você, cliente, se sinta mais confortável e à 
+              vontade ao gerenciar suas contas e desfrutar de nossas variadas opções no catálogo.
+              Nosso objetivo é facilitar suas compras e tornar sua experiência agradável. 
+              Com um design intuitivo e recursos práticos, você terá facilidade em navegar e encontrar 
+              exatamente o que procura. Além disso, garantimos segurança em suas transações para que você possa comprar 
+              com tranquilidade. Explore nosso catálogo em constante atualização e aproveite a comodidade que Coisinhas da Beth 
+              oferece. 
+            </p>
+
+            <h2 className='uppercase text-fonts/80 font-semibold text-xl'>Sua satisfação é nossa prioridade!</h2>
+            <Button className='text-xl'>CATÁLOGO</Button>
+          </div>
+        </div>
+
+        <div className='flex flex-col justify-between items-center gap-4'>
+          <Card.Root>
+            <Card.Icon>
+              <Clock />
+            </Card.Icon>
+
+            <Card.Title>RAPIDEZ DE ENTREGA</Card.Title>
+
+            <Card.Description>Oferecemos conveniência imediata ao cliente, reduzindo o tempo de espera e atendendo às necessidades urgentes</Card.Description>          
+          </Card.Root>
+
+          <Card.Root>
+            <Card.Icon> 
+              <CircleDollarSignIcon />
+            </Card.Icon>
+
+            <Card.Title>PREÇOS IMBÁTIVEIS</Card.Title>
+
+            <Card.Description>Oferecemos a certeza de pagar menos e levar mais, para satisfazer suas necessidades e seu bolso</Card.Description>          
+          </Card.Root>
+
+          <Card.Root>
+            <Card.Icon> 
+              <CreditCard /> 
+            </Card.Icon>
+
+            <Card.Title>PAGAMENTO FÁCIL</Card.Title>
+
+            <Card.Description>Oferecemos opções de pagamento simples e acessíveis</Card.Description>          
+          </Card.Root>
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Footer/>
+      
+    </div>
   )
 }
