@@ -2,26 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(43, 39, 48);   
+  color: rgb(220,220,220);
 }
+
+
+/* 
+  #E966A0 - rgb(233, 102, 160) rosa
+  #2B2730 - rgb(43, 39, 48) cinza
+  #6554AF - rgb(101, 84, 175) azul claro
+  #9575DE - rgb(149, 117, 222) azul escuro
+  #DCDCDC - rgb(220,220,220) cinza claro
+*/
