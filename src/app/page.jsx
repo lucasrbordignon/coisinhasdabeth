@@ -14,7 +14,7 @@ export default function Home() {
       "id": 1,
       "name": "Esfoliante Capilar Limpeza Profunda Advance Techniques 125g",
       "price": 40,
-      "isPromotional": true,
+      "isPromotional": false,
       "promotionalPrice": 30,
       "image": ""
     },
@@ -30,7 +30,7 @@ export default function Home() {
       "id": 1,
       "name": "Esfoliante Capilar Limpeza Profunda Advance Techniques 125g",
       "price": 39.99,
-      "isPromotional": true,
+      "isPromotional": false,
       "promotionalPrice": 29.99,
       "image": ""
     }
@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left md:grid-cols-3 sm:grid-cols-2">
+      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2">
 
         {
           items.map((item) => {
