@@ -31,7 +31,7 @@ export default function Item(props) {
   return props.isPromotional ? 
   (
     <a
-    className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 min-w-[220px]"
+    className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:border-neutral-700 hover:bg-neutral-800/30 min-w-[220px]"
     >
       <div>
         <span 
@@ -69,7 +69,7 @@ export default function Item(props) {
   : 
   (
     <a
-      className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 min-w-[220px]"
+      className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:border-neutral-700 hover:bg-neutral-800/30 min-w-[220px]"
     >
       <div>          
         <Image
