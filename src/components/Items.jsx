@@ -1,10 +1,10 @@
 import Decimal from 'decimal.js'
 import Image from "next/image"
-import Avon from '../assets/avon.jpg'
 
 export default function Item(props) {
 
   var price = new Decimal(props.price)
+
   var promotionalPrice = new Decimal(props.promotionalPrice)
   var difference = new Decimal(price.sub(promotionalPrice))
 
@@ -16,7 +16,7 @@ export default function Item(props) {
     maximumFractionDigits: 2
    })
 
-  const formattedPrice = price.toNumber().toLocaleString('pt-BR', {
+  var formattedPrice = price.toNumber().toLocaleString('pt-BR', {
     style: 'currency',
     currency: 'BRL'
   })
@@ -31,18 +31,18 @@ export default function Item(props) {
   return props.isPromotional ? 
   (
     <a
-      className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+    className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 min-w-[220px]"
     >
       <div>
         <span 
-          className="absolute text-sm pr-1 top-2 right-4 bg-[#E966A0] rounded-r-sm rounded-l-2xl border-l-[10px] border-[#E966A0]"
+          className="absolute pr-1 top-2 right-4 bg-[#E966A0] rounded-r-sm rounded-l-2xl border-l-[10px] border-[#E966A0] text-sm"
         >
           {`${formattedResult}% OFF`}
         </span>
 
         <Image
           alt="Product Image" 
-          src={Avon} 
+          src={props.image} 
           style={{borderRadius: '8px'}}
         />
       </div>
@@ -69,12 +69,12 @@ export default function Item(props) {
   : 
   (
     <a
-      className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+      className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 min-w-[220px]"
     >
       <div>          
         <Image
           alt="Product Image" 
-          src={Avon} 
+          src={props.image} 
           style={{borderRadius: '8px'}}
         />
       </div>
