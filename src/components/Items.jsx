@@ -1,3 +1,4 @@
+import { arredondarParaCasaDecimal } from '@/constants/currencyFormat'
 import Decimal from 'decimal.js'
 import Image from "next/image"
 
@@ -10,7 +11,9 @@ export default function Item(props) {
 
   var discountPercentage = new Decimal(( difference * 100 ) / price)
 
-  const formattedResult = discountPercentage.toNumber().toLocaleString('pt-BR', {
+  var formattedDiscontPercentage = arredondarParaCasaDecimal(discountPercentage)
+
+  const discountPercentageFixed = formattedDiscontPercentage.toNumber().toLocaleString('pt-BR', {
     style: 'decimal',
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
@@ -26,18 +29,22 @@ export default function Item(props) {
     currency: 'BRL'
   })
 
-  var name = props.name
+  if(props.weight === undefined || props.weight === 0){
+    var name = `${props.name.substr(0,50)}...`
+  } else {
+    var name = `${props.name.substr(0,50)}... ${props.weight}g`
+  }
 
   return props.isPromotional ? 
   (
     <a
-    className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 min-w-[220px]"
+    className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 min-w-[192px]"
     >
       <div>
         <span 
           className="absolute pr-1 top-2 right-4 bg-[#E966A0] rounded-r-sm rounded-l-2xl border-l-[10px] border-[#E966A0] text-sm"
         >
-          {`${formattedResult}% OFF`}
+          {`${discountPercentageFixed}% OFF`}
         </span>
 
         <Image
@@ -48,7 +55,7 @@ export default function Item(props) {
       </div>
       <h2 
         className={`mb-3 text-xs text-center opacity-90`}>
-        {`${name.substr(0,50)}...`}
+        {name}
       </h2>
 
       <div>
@@ -69,7 +76,7 @@ export default function Item(props) {
   : 
   (
     <a
-      className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 min-w-[220px]"
+      className="relative flex flex-col gap-2 rounded-lg border border-transparent px-5 py-4 transition-colors hover:cursor-pointer hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 min-w-[192px]"
     >
       <div>          
         <Image
@@ -80,7 +87,7 @@ export default function Item(props) {
       </div>
       <h2 
         className={`mb-3 text-xs text-center opacity-90`}>
-        {`${name.substr(0,50)}...`}
+        {name}
       </h2>
 
       <div>
