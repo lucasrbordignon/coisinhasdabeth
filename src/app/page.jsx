@@ -31,7 +31,7 @@ export default function Home() {
                 price={product.price}
                 isPromotional={product.isPromotional} 
                 promotionalPrice={product.promotionalPrice}
-                image={''}
+                image={""}
               />
           ))
         }
