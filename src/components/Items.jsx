@@ -1,3 +1,5 @@
+'use client'
+
 import { arredondarParaCasaDecimal } from '@/constants/currencyFormat'
 import Decimal from 'decimal.js'
 import Image from "next/image"
@@ -29,11 +31,15 @@ export default function Item(props) {
     currency: 'BRL'
   })
 
-  if(props.weight === undefined || props.weight === 0){
-    var name = `${props.name.substr(0,50)}...`
+  if (props.name.lenght > 50) {
+    var name = props.weight === undefined || props.weight === 0 ? `${props.name.substr(0,50)}...` : `${props.name.substr(0,50)}... ${props.weight}g`
   } else {
-    var name = `${props.name.substr(0,50)}... ${props.weight}g`
+    var name = props.name
   }
+
+  var imageUrl = props.Image
+
+  console.log(imageUrl)
 
   return props.isPromotional ? 
   (
@@ -51,6 +57,8 @@ export default function Item(props) {
           alt="Product Image" 
           src={props.image} 
           style={{borderRadius: '8px'}}
+          width={300}
+          height={300}
         />
       </div>
       <h2 
@@ -83,8 +91,11 @@ export default function Item(props) {
           alt="Product Image" 
           src={props.image} 
           style={{borderRadius: '8px'}}
+          width={300}
+          height={300}
         />
       </div>
+
       <h2 
         className={`mb-3 text-xs text-center opacity-90`}>
         {name}

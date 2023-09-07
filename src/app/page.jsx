@@ -10,10 +10,9 @@ export default function Home() {
 
   React.useEffect(() => {    
       service.getAllProducts()
-        .then((response) => {      
-
-        const products = response.data
-        setMyProducts(products)        
+        .then((response) => {  
+          const products = response.data
+          setMyProducts(products)        
       })
   }, [])
 
@@ -27,12 +26,13 @@ export default function Home() {
         {
           products.map((product) => (
             <Item 
-                name={product.description} 
-                price={product.price}
-                isPromotional={product.isPromotional} 
-                promotionalPrice={product.promotionalPrice}
-                image={""}
-              />
+              name={product.description} 
+              price={product.price}
+              isPromotional={product.isPromotional} 
+              promotionalPrice={product.promotionalPrice}   
+              image={product.image}   
+              weight={product.weight}          
+            />
           ))
         }
       
