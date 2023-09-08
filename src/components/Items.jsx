@@ -34,12 +34,8 @@ export default function Item(props) {
   if (props.name.lenght > 50) {
     var name = props.weight === undefined || props.weight === 0 ? `${props.name.substr(0,50)}...` : `${props.name.substr(0,50)}... ${props.weight}g`
   } else {
-    var name = props.name
+    var name = props.weight === undefined || props.weight === 0 ? props.name : `${props.name} ${props.weight}g`
   }
-
-  var imageUrl = props.Image
-
-  console.log(imageUrl)
 
   return props.isPromotional ? 
   (
