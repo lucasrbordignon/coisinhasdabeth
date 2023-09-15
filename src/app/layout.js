@@ -8,6 +8,7 @@ export const metadata = {
   description: 'Catálogo de produtos da Coisinhas da Beth',
 }
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
