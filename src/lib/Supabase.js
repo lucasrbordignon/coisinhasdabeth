@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 
-require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
+require('dotenv').config({});
 
 const supabaseUrl = "https://quakdajqnqdvzescshsg.supabase.co"
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY
