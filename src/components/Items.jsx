@@ -59,7 +59,7 @@ export default function Item(props) {
         {name}
       </h2>
 
-      <div>
+      <div className='flex flex-col items-center'>
         <PromotionalPrice
           isPromotional={props.isPromotional}
           formattedPrice={formattedPrice}
